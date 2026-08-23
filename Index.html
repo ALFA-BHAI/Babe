@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Hannah ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#16000b,#5b0b30,#ff4f87);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* EVERY SCREEN */
+.screen{
+    min-height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:30px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.screen.active{
+    display:flex;
+}
+
+/* NAMES */
+.name{
+    font-size:48px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-shadow:0 5px 25px rgba(255,255,255,.35);
+}
+
+.special-heart{
+    font-size:65px;
+    margin:8px 0;
+    animation:heartbeat 1s infinite;
+}
+
+.date{
+    font-size:24px;
+    letter-spacing:5px;
+    margin-top:5px;
+    color:#ffe1eb;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.25);}
+}
+
+/* SURPRISE */
+.surprise-title{
+    font-size:30px;
+    line-height:1.5;
+    font-weight:bold;
+}
+
+.real-heart{
+    font-size:105px;
+    margin:25px 0;
+    animation:realbeat 1s infinite;
+}
+
+@keyframes realbeat{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.12);}
+}
+
+/* BUTTON */
+.btn{
+    border:0;
+    padding:15px 38px;
+    border-radius:40px;
+    background:white;
+    color:#d41459;
+    font-size:19px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 8px 30px rgba(0,0,0,.3);
+    transition:.3s;
+}
+
+.btn:active{
+    transform:scale(.95);
+}
+
+/* PHOTOS */
+.photo-title{
+    font-size:31px;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.photo-gallery{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:18px;
+    max-width:700px;
+}
+
+.photo-gallery img{
+    width:190px;
+    height:240px;
+    object-fit:cover;
+    border-radius:22px;
+    border:4px solid white;
+    box-shadow:0 10px 30px rgba(0,0,0,.45);
+}
+
+.love-you{
+    font-size:40px;
+    font-weight:900;
+    margin:25px 0;
+    animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.08);}
+}
+
+/* LOCK */
+.lock-screen{
+    background:linear-gradient(145deg,#050505,#25121b,#090909);
+}
+
+.lock-icon{
+    font-size:70px;
+}
+
+.lock-title{
+    font-size:30px;
+    font-weight:bold;
+    margin:15px;
+}
+
+.lock-sub{
+    color:#ffb6cb;
+    margin-bottom:20px;
+}
+
+#lockInput{
+    width:220px;
+    padding:15px;
+    border-radius:15px;
+    border:2px solid #ff4f87;
+    background:#160910;
+    color:white;
+    text-align:center;
+    font-size:28px;
+    letter-spacing:8px;
+    outline:none;
+}
+
+.error{
+    color:#ff789f;
+    margin-top:12px;
+    display:none;
+}
+
+/* GIFT */
+.gift-screen{
+    background:
+    radial-gradient(circle,#ff8fb3,transparent 40%),
+    linear-gradient(135deg,#26000f,#9c164e);
+}
+
+.gift{
+    position:relative;
+    width:220px;
+    height:170px;
+    margin:30px auto;
+    cursor:pointer;
+    animation:giftfloat 2s infinite;
+}
+
+.gift-body{
+    position:absolute;
+    bottom:0;
+    width:220px;
+    height:130px;
+    background:linear-gradient(#ff4c82,#d90e55);
+    border-radius:10px;
+}
+
+.gift-lid{
+    position:absolute;
+    top:0;
+    left:-10px;
+    width:240px;
+    height:50px;
+    background:#ff78a2;
+    border-radius:10px;
+}
+
+.ribbon-v{
+    position:absolute;
+    left:90px;
+    top:0;
+    width:40px;
+    height:170px;
+    background:#ffd84d;
+}
+
+.ribbon-h{
+    position:absolute;
+    left:0;
+    top:55px;
+    width:220px;
+    height:30px;
+    background:#ffd84d;
+}
+
+.gift-text{
+    position:absolute;
+    top:92px;
+    width:100%;
+    z-index:5;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.gift-small{
+    font-size:20px;
+    margin-top:5px;
+}
+
+@keyframes giftfloat{
+    50%{transform:translateY(-10px);}
+}
+
+/* JOY */
+.joy{
+    font-size:105px;
+    animation:joypop 1s ease;
+}
+
+@keyframes joypop{
+    from{
+        transform:scale(0);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.for-you{
+    font-size:35px;
+    font-weight:bold;
+}
+
+/* LETTER */
+.letter-screen{
+    background:linear-gradient(135deg,#ffb0c9,#6e123d,#18000b);
+}
+
+.letter{
+    width:min(650px,95%);
+    background:#fff8f2;
+    color:#681b3c;
+    border-radius:25px;
+    padding:30px 22px;
+    box-shadow:0 15px 50px rgba(0,0,0,.5);
+    line-height:1.7;
+    font-size:21px;
+    font-weight:bold;
+    animation:letteropen 1s ease;
+}
+
+@keyframes letteropen{
+    from{
+        transform:translateY(50px) scale(.8);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+}
+
+/* WAIT */
+.wait{
+    font-size:52px;
+    font-weight:900;
+    animation:waitpulse 1s infinite;
+}
+
+@keyframes waitpulse{
+    50%{
+        transform:scale(1.1);
+        text-shadow:0 0 30px white;
+    }
+}
+
+/* FINAL PHOTO */
+.final-photo{
+    width:min(330px,90vw);
+    max-height:500px;
+    object-fit:cover;
+    border-radius:28px;
+    border:6px solid white;
+    box-shadow:0 15px 50px rgba(0,0,0,.5);
+}
+
+.final-caption{
+    margin-top:25px;
+    font-size:32px;
+    font-weight:900;
+}
+
+/* FALLING HEARTS + STARS */
+.falling{
+    position:fixed;
+    top:-60px;
+    z-index:2;
+    pointer-events:none;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-60px) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- 1. HANNAH + STAMIN -->
+
+<section class="screen active" id="screen1">
+
+    <div class="name">
+        Hannah
+    </div>
+
+    <div class="special-heart">
+        ❤️
+    </div>
+
+    <div class="name">
+        Stamin
+    </div>
+
+    <div class="date">
+        08-14
+    </div>
+
+</section>
+
+
+<!-- 2. SURPRISE -->
+
+<section class="screen" id="screen2">
+
+    <div class="surprise-title">
+        Hey Bangarammm ❤️<br>
+        This surprise is for you...
+    </div>
+
+    <div class="real-heart">
+        🫀
+    </div>
+
+    <button class="btn" onclick="goTo('screen3')">
+        OPEN IT 💌
+    </button>
+
+</section>
+
+
+<!-- 3. TWO PHOTOS -->
+
+<section class="screen" id="screen3">
+
+    <div class="photo-title">
+        Thank You ❤️
+    </div>
+
+    <div class="photo-gallery">
+
+        <img src="photo1.jpg" alt="Memory 1">
+
+        <img src="photo2.jpg" alt="Memory 2">
+
+    </div>
+
+    <div class="love-you">
+        LOVE YOU ❤️
+    </div>
+
+    <button class="btn" onclick="goTo('screen4')">
+        CONTINUE 💕
+    </button>
+
+</section>
+
+
+<!-- 4. LOCK SCREEN -->
+
+<section class="screen lock-screen" id="screen4">
+
+    <div class="lock-icon">
+        🔐
+    </div>
+
+    <div class="lock-title">
+        Locked For You ❤️
+    </div>
+
+    <div class="lock-sub">
+        Enter the special code
+    </div>
+
+    <input
+        id="lockInput"
+        type="password"
+        inputmode="numeric"
+        maxlength="4"
+        placeholder="••••"
+    >
+
+    <br>
+
+    <button class="btn" onclick="unlock()">
+        UNLOCK 🔓
+    </button>
+
+    <div id="error" class="error">
+        Wrong code... Try again ❤️
+    </div>
+
+</section>
+
+
+<!-- 5. GIFT BOX -->
+
+<section class="screen gift-screen" id="screen5">
+
+    <div class="photo-title">
+        A Gift For You ❤️
+    </div>
+
+    <div class="gift" onclick="openGift()">
+
+        <div class="gift-lid"></div>
+
+        <div class="gift-body"></div>
+
+        <div class="ribbon-v"></div>
+
+        <div class="ribbon-h"></div>
+
+        <div class="gift-text">
+            DARLING
+
+            <div class="gift-small">
+                FOR YOU ❤️
+            </div>
+        </div>
+
+    </div>
+
+    <button class="btn" onclick="openGift()">
+        OPEN GIFT 🎁
+    </button>
+
+</section>
+
+
+<!-- 6. KINDER JOY -->
+
+<section class="screen" id="screen6">
+
+    <div class="joy">
+        🥚
+    </div>
+
+    <div class="for-you">
+        FOR YOU ❤️
+    </div>
+
+    <br>
+
+    <button class="btn" onclick="goTo('screen7')">
+        NEXT 💕
+    </button>
+
+</section>
+
+
+<!-- 7. LOVE LETTER -->
+
+<section class="screen letter-screen" id="screen7">
+
+    <div class="letter">
+
+        Oi Bangarammm ❤️<br><br>
+
+        Love you so much my dear wife,
+        my heart, my love, my strength,
+        my supporter, my everything,
+        my caretaker, my darling,
+        my bujji thalli, my chitti thalli,
+        my Dimond, my babyyyyy.... ❤️<br><br>
+
+        I LOVE YOU SO MUCH<br><br>
+
+        UMMMMMMMMMMAHHHHHH.. ❤️💋
+
+    </div>
+
+    <br>
+
+    <button class="btn" onclick="goTo('screen8')">
+        WAITTT... ❤️
+    </button>
+
+</section>
+
+
+<!-- 8. WAIT + PHOTO -->
+
+<section class="screen" id="screen8">
+
+    <div class="wait">
+        WAITTT... ❤️
+    </div>
+
+    <br>
+
+    <img
+        src="photo2.jpg"
+        class="final-photo"
+        alt="My Love"
+    >
+
+    <div class="final-caption">
+        My Everything ❤️
+    </div>
+
+</section>
+
+
+<script>
+
+/* SCREEN CHANGE */
+
+function goTo(id){
+
+    document.querySelectorAll(".screen").forEach(function(screen){
+        screen.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
+    window.scrollTo(0,0);
+}
+
+
+/* AUTOMATICALLY GO FROM NAME TO SURPRISE */
+
+setTimeout(function(){
+
+    goTo("screen2");
+
+},3500);
+
+
+/* LOCK CODE = 1408 */
+
+function unlock(){
+
+    const input =
+        document.getElementById("lockInput").value;
+
+    if(input === "1408"){
+
+        document.getElementById("error").style.display="none";
+
+        goTo("screen5");
+
+    }else{
+
+        document.getElementById("error").style.display="block";
+
+    }
+}
+
+
+/* OPEN GIFT */
+
+function openGift(){
+
+    goTo("screen6");
+
+}
+
+
+/* FALLING HEARTS + STARS */
+
+function createFalling(){
+
+    const item =
+        document.createElement("div");
+
+    item.className="falling";
+
+    const symbols=[
+        "❤️",
+        "💕",
+        "💖",
+        "💗",
+        "💘",
+        "✨",
+        "⭐",
+        "🌟",
+        "💫"
+    ];
+
+    item.innerHTML =
+        symbols[
+            Math.floor(
+                Math.random()*symbols.length
+            )
+        ];
+
+    item.style.left =
+        Math.random()*100+"vw";
+
+    item.style.fontSize =
+        (18+Math.random()*25)+"px";
+
+    item.style.animationDuration =
+        (3+Math.random()*5)+"s";
+
+    document.body.appendChild(item);
+
+    setTimeout(function(){
+
+        item.remove();
+
+    },9000);
+}
+
+setInterval(createFalling,250);
+
+</script>
+
+</body>
+  </html>
